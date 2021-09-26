@@ -13,6 +13,10 @@ const routes = [
     component: lazy(() => import('./views/About'))
   },
   {
+    path: "/channel-types",
+    component: lazy(() => import('./views/ChannelTypes'))
+  },
+  {
     path: "*all",
     component: lazy(() => import('./views/NotFound'))
   }

@@ -10,6 +10,7 @@ const Nav: Component = () => {
   const links = [
     { text: 'Home', to: '/' },
     { text: 'About', to: '/about' },
+    { text: 'Channel Types', to: '/channel-types' },
   ];
   const activeClass = 'text-white bg-gray-900';
   const inactiveClass = 'text-gray-300 hover:text-white hover:bg-gray-700';

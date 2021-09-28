@@ -31,7 +31,11 @@ function ResourceList<T> (props: Props<T>) {
             <Error resource={ props.resource } fallback={ props.fallback }>
                 <Loader resource={ props.resource }>
                     <For each={ props.resource[0]().results } fallback={ props.noItems || ( <div>No Items</div> ) }>
-                        { props.children }
+                        { (item) => (
+                            <div class="p-3 border-b-2">
+                                { props.children(item) }
+                            </div>
+                        )}
                     </For>
                 </Loader>
             </Error>

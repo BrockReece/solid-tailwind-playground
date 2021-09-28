@@ -1,10 +1,21 @@
-import { Component, Show } from 'solid-js'
+import { Component } from 'solid-js'
 
-import { channelTypeResource, loadMoreChannelTypes, search, setSearch } from '../store/channelTypes'
+import { channelTypeResource, search, setSearch } from '../store/channelTypes'
 
-import Btn from '../components/Btn'
 import Header from '../components/Header'
-import ResourceList from '../components/resources/List'
+import LoadMoreList from '../components/resources/LoadMoreList'
+
+const skeleton = () =>  (
+  <div class="flex items-center">
+    <div class="flex-grow">
+      <div class="flex flex-col space-y-2 ">
+        <div class="w-48 bg-gray-300 h-5 rounded-md"></div>
+        <div class="w-32 bg-gray-200 h-4 rounded-md"></div>
+      </div>
+    </div>
+    <div class="text-lg border-2 rounded-full border-gray-200 border-solid px-2 mx-2 text-grey-300">&gt;</div>
+  </div>
+)
 
 const Resource: Component = () => {
   return (
@@ -19,22 +30,20 @@ const Resource: Component = () => {
                     <input class="font-bold uppercase rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Search"value={ search() } onInput={ ({currentTarget}) => setSearch(currentTarget.value) }/>
                 </div>
                 
-                <ResourceList
+                <LoadMoreList
                   resource={ channelTypeResource }
+                  skeleton={ skeleton }
                 >
 									{ item => ( 
-										<div class="p-3 border-b-2">
-											<strong>{ item.name }</strong> 
-											<div>{ item.slug }</div>
+										<div class="flex items-center">
+                      <div class="flex-grow">
+                        <strong>{ item.name }</strong> 
+                        <div class="text-sm">{ item.slug }</div>
+                      </div>
+                      <div class="text-lg border-2 rounded-full border-gray-200 border-solid px-2 mx-2">&gt;</div>
 										</div> 
 									)}
-              </ResourceList>
-                
-                <Show when={ channelTypeResource[0]()?.next }>
-                  <div class="pt-2 text-center">
-                      <Btn onClick={ loadMoreChannelTypes }>Load More</Btn>
-                  </div>
-                </Show>
+                </LoadMoreList>
               </div>
             </div>
           </div>

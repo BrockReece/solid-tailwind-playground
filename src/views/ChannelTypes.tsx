@@ -1,6 +1,7 @@
 import { Component } from 'solid-js'
 
-import { channelTypeResource, search, setSearch } from '../store/channelTypes'
+import { channelTypeResource, filters, setFilters } from '../store/channelTypes'
+import { createModel, createFormModelFromStore } from '../directives'
 
 import Header from '../components/Header'
 import LoadMoreList from '../components/resources/LoadMoreList'
@@ -18,6 +19,8 @@ const skeleton = () =>  (
 )
 
 const Resource: Component = () => {
+  const { modelFromStore } = createFormModelFromStore(filters, setFilters) 
+
   return (
     <>
       <Header title="Channel Types" />
@@ -27,7 +30,7 @@ const Resource: Component = () => {
             <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
               <div class="sm:text-center lg:text-left">
                 <div class="flex">
-                    <input class="font-bold uppercase rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Search"value={ search() } onInput={ ({currentTarget}) => setSearch(currentTarget.value) }/>
+                  <input class="font-bold uppercase rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Search" use:modelFromStore="search" />
                 </div>
                 
                 <LoadMoreList

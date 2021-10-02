@@ -1,6 +1,7 @@
 import { Component, lazy } from 'solid-js';
-import { Router, Route } from 'solid-app-router';
+import { Router, useRoutes } from 'solid-app-router';
 
+import { channelTypeDataFunction } from './store/channelTypes';
 import Nav from './components/Nav';
 
 const routes = [
@@ -14,7 +15,15 @@ const routes = [
   },
   {
     path: "/channel-types",
-    component: lazy(() => import('./views/ChannelTypes'))
+    component: lazy(() => import('./views/ChannelTypes')),
+    children: [
+      { path: "/", component: lazy(() => import('./views/ChannelTypes/index')) },
+      {
+        path: "/:id",
+        component: lazy(() => import('./views/ChannelTypes/[id]')),
+        data: channelTypeDataFunction
+      }
+    ]
   },
   {
     path: "*all",
@@ -23,8 +32,9 @@ const routes = [
 ];
 
 const App: Component = () => {
+  const Route = useRoutes(routes)
   return (
-    <Router routes={routes}>
+    <Router>
       <Nav />
       <Route />
     </Router>

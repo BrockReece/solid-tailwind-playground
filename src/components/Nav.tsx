@@ -1,11 +1,11 @@
 import { Component, createMemo, createSignal, For } from 'solid-js';
-import { Link, useRouter } from 'solid-app-router'
+import { Link, useLocation } from 'solid-app-router'
 
 const Nav: Component = () => {
   const [showProfileMenu, setShowProfileMenu] = createSignal(false);
   const [showMenu, setShowMenu] = createSignal(false);
-  const router = useRouter();
-  const currentLocation = createMemo(() => router[0].location);
+  const location = useLocation()
+  const currentLocation = createMemo(() => location.pathname);
 
   const links = [
     { text: 'Home', to: '/' },

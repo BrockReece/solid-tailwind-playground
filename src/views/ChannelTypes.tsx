@@ -1,4 +1,5 @@
 import { Component } from 'solid-js'
+import { Link, Outlet } from 'solid-app-router'
 
 import { channelTypeResource, filters, setFilters } from '../store/channelTypes'
 import { createModel, createFormModelFromStore } from '../directives'
@@ -44,9 +45,12 @@ const Resource: Component = () => {
                         <div class="text-sm">{ item.slug }</div>
                       </div>
                       <div class="text-lg border-2 rounded-full border-gray-200 border-solid px-2 mx-2">&gt;</div>
+                      <Link href={`/channel-types/${item.id}`}>View</Link>
 										</div> 
 									)}
                 </LoadMoreList>
+
+                <Outlet />                
               </div>
             </div>
           </div>

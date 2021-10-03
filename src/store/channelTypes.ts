@@ -1,4 +1,5 @@
 import { createResource, createMemo } from 'solid-js'
+import { RouteDataFuncArgs } from 'solid-app-router'
 import { createStore } from "solid-js/store"
 import { BASE_PAGINATION_LIMIT, PLATFORM_API_BASE, DjangoList } from './platformAPIBase'
 
@@ -26,3 +27,13 @@ export const channelTypeResource = createResource<DjangoList<ChannelType>, typeo
     return fetch(`${PLATFORM_API_BASE}/channel-types?${params}`)
         .then(response => response.json())
 })
+
+
+export function channelTypeDataFunction ({ params }: RouteDataFuncArgs) {
+    const [ ChannelType ] = createResource<ChannelType, string>(() => params.id, (id) => {
+        return fetch(`${PLATFORM_API_BASE}/channel-types/${id}`)
+            .then(res => res.json())
+    });
+
+    return ChannelType
+}

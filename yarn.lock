@@ -257,7 +257,19 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@felte/common@0.5.1":
+"@croud-ui/css@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@croud-ui/css/-/css-0.2.0.tgz#03b23a5b29638c230b4121c7e7ab52fa0cc28200"
+  integrity sha512-Nlf38JhyTJRj32bS7/Wri9SS0mCqeIMPOcEruSNF5UHxKCfeDyg+3tYQ+Rjv3+yJeSn1oTX6KXZ37iqeFCCwUQ==
+  dependencies:
+    "@croud-ui/tokens" "^0.3.0"
+
+"@croud-ui/tokens@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@croud-ui/tokens/-/tokens-0.3.0.tgz#3e98d6adaa7301b6b4509680d3caa3d956508020"
+  integrity sha512-DcrahmEVPAPDFvHtyEdJTHvP+4yInjJfA0bB50dySaZr4Xz7zpQmb0AAsGJitZ8fTVN8oTFWVpAcNegwsF2bpQ==
+
+"@felte/common@0.5.1", "@felte/common@^0.5.0":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@felte/common/-/common-0.5.1.tgz#f188182a6fdf4dfada9a74180883c5147beb7aa8"
   integrity sha512-r5sepUPBwwTMtks/vGfRPsp+lu4FPemwM+w5xb9J/G1uJCMThf8r/iuivhUWHzfyL9C+6XoNBDTwuvy5c+81Ow==

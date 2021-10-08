@@ -1,5 +1,5 @@
 import { createSignal, createMemo, ResourceReturn, Accessor } from "solid-js" 
-export const PLATFORM_API_BASE = '/api'
+export const PLATFORM_API_BASE = '/api/platform'
 
 export const BASE_PAGINATION_LIMIT = 10
 

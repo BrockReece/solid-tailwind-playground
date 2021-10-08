@@ -15,10 +15,10 @@ interface Props<T = {}> {
 function ResourceList<T> (props: Props<T>) {
     return (
         <div>
-            <div class="flex gap-4">
-                <div class="flex-grow px-2">
+            <div class="cui-flex cui-gap-4">
+                <div class="cui-flex-grow cui-px-2">
                     <Show when={ props.resource[0]()?.count > 0 }>
-                        <div class="text-sm">
+                        <div class="cui-text-sm">
                             Showing { props.resource[0]().results.length } records out of { props.resource[0]()?.count }
                         </div>
                     </Show>
@@ -32,7 +32,7 @@ function ResourceList<T> (props: Props<T>) {
                 <Loader resource={ props.resource }>
                     <For each={ props.resource[0]().results } fallback={ props.noItems || ( <div>No Items</div> ) }>
                         { (item) => (
-                            <div class="p-3 border-b-2">
+                            <div class="cui-p-3 cui-border-b-2">
                                 { props.children(item) }
                             </div>
                         )}

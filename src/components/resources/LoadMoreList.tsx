@@ -30,10 +30,10 @@ function LoadMoreList<T> (props: Props<T>) {
             </ResourceList>
             
             <Show when={ isLoadingMore() && props.skeleton }>
-                <div class="animate-pulse">
+                <div class="cui-animate-pulse">
                     <For each={ Array.from(Array(nextPageSize())) }>
                         {() => (
-                            <div class="p-3 border-b-2">
+                            <div class="cui-p-3 cui-border-b-2">
                                 { props.skeleton() }
                             </div>
                         )}
@@ -43,7 +43,7 @@ function LoadMoreList<T> (props: Props<T>) {
             </Show>
 
             <Show when={ props.resource[0]()?.next }>
-                <div class="pt-2 text-center">
+                <div class="cui-pt-2 cui-text-center">
                     <Btn onClick={ loadMore }>Load More</Btn>
                 </div>
             </Show>

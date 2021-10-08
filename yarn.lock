@@ -540,6 +540,11 @@ commander@^6.0.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
+component-register@~0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/component-register/-/component-register-0.8.1.tgz#e521c346bac22672da534ac475e91e503b27bbe8"
+  integrity sha512-X+1b+jg9/Xmu5n/pkHA4kXtU7gR8yzn23zdel1LdH73EMyA6gC3Xj94oEGElT5VWhWtxh5FHCdIR54lKXHFubA==
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -1170,6 +1175,13 @@ solid-app-router@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/solid-app-router/-/solid-app-router-0.1.7.tgz#691d03216bde8126db5284ee67c7586017abbeb5"
   integrity sha512-YWKsYVGdacoP6kclFGpFt+6uWw5gpFgPitTQDZTAsIA1BCb7X+WFsiNvJByaiFOxsVHkJu3jYAAEwU+IaDdsLw==
+
+solid-element@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/solid-element/-/solid-element-1.1.5.tgz#62b8a8b39537822c2734293ae82d708476fcd4a2"
+  integrity sha512-X5k5WHYfSBLtLARLWxkO2li4kJOSjC8hTmCnpN3BKol5onfy+utgXwL8L3/euZYS1/2/ngMj5bEf9YiKhBkjjQ==
+  dependencies:
+    component-register "~0.8.1"
 
 solid-js@^1.0.0:
   version "1.0.0"

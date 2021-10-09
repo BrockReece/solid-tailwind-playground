@@ -1,6 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultsDeep = require('lodash.defaultsdeep');
+const baseConfig = require("@croud-ui/css");
 
-module.exports = {
+module.exports = defaultsDeep({
   mode: 'jit',
   purge: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -15,4 +17,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms')
   ]
-};
+}, baseConfig);

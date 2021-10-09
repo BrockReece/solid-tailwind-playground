@@ -53,17 +53,17 @@ const ChannelTypeForm: Component<Props> = (props) => {
     })
 
     return (
-        <form use:form class="grid grid-cols-1 gap-6">
-            <label class="block">
-                <span class="text-gray-700">Name</span>
-                <input ref={nameInput} name="name" type="text" class="rounded mt-1 block w-full" />
-                <span class="text-red-300">{ errors.name || (<span>&nbsp;</span>) }</span>
+        <form use:form class="cui-grid cui-grid-cols-1 cui-gap-6">
+            <label class="cui-block">
+                <span class="cui-text-gray-700">Name</span>
+                <input ref={nameInput} name="name" type="text" class="cui-rounded cui-mt-1 cui-block cui-w-full" />
+                <span class="cui-text-red-300">{ errors.name || (<span>&nbsp;</span>) }</span>
             </label>
 
-            <label class="block">
-                <span class="text-gray-700" >Slug</span>
-                <input name="slug" type="text" class="rounded mt-1 block w-full" />
-                <span class="text-red-300">{ errors.slug || (<span>&nbsp;</span>) }</span>
+            <label class="cui-block">
+                <span class="cui-text-gray-700" >Slug</span>
+                <input name="slug" type="text" class="cui-rounded cui-mt-1 cui-block cui-w-full" />
+                <span class="cui-text-red-300">{ errors.slug || (<span>&nbsp;</span>) }</span>
             </label>
 
             <Btn type="submit" disabled={ !isValid() || isSubmitting() }>Save</Btn>

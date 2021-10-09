@@ -5,7 +5,7 @@ interface Props extends Omit<JSX.ButtonHTMLAttributes<HTMLButtonElement>, 'child
 const Btn: Component<Props> = (props) => {
     return (
         <button 
-            class="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-gray-600 bg-gray-50 hover:text-gray-800 hover:bg-gray-100 active:bg-gray-200 focus:ring-gray-300 disabled:opacity-50"
+            class="cui-px-4 cui-py-2 cui-rounded-md cui-text-sm cui-font-medium cui-border-0 cui-focus:outline-none cui-focus:ring cui-transition cui-text-gray-600 cui-bg-gray-50 cui-hover:text-gray-800 cui-hover:bg-gray-100 cui-active:bg-gray-200 cui-focus:ring-gray-300 cui-disabled:opacity-50"
             { ...props }
         >
             { props.children }

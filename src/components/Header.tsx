@@ -6,9 +6,9 @@ interface Props {
 
 const Header: Component<Props> = (props) => {
   return (
-    <header class="bg-white shadow">
-      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold leading-tight text-gray-900">
+    <header class="cui-bg-white cui-shadow">
+      <div class="cui-max-w-7xl cui-mx-auto cui-py-6 cui-px-4 cui-sm:px-6 cui-lg:px-8">
+        <h1 class="cui-text-3xl cui-font-bold cui-leading-tight cui-text-gray-900">
           {props.title}
         </h1>
       </div>

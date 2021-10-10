@@ -19,8 +19,23 @@ const skeleton = () =>  (
   </div>
 )
 
-const Resource: Component = () => {
+interface Props {
+  limit?: number
+}
+
+const ChannelTypeList: Component<Props> = (props) => {
   const { modelFromStore } = createFormModelFromStore(filters, setFilters) 
+
+  props.limit && setFilters('limit', props.limit)
+
+  function emitEvent (element: HTMLElement, detail: string) {
+    element.dispatchEvent(new CustomEvent('selected', {
+      bubbles: true,
+      cancelable: false,
+      composed: true,
+      detail
+    }))
+  }
 
   return (
     <>
@@ -44,13 +59,13 @@ const Resource: Component = () => {
                         <strong>{ item.name }</strong> 
                         <div class="cui-text-sm">{ item.slug }</div>
                       </div>
-                      <div class="cui-text-lg cui-border-2 cui-rounded-full cui-border-gray-200 cui-border-solid cui-px-2 cui-mx-2">&gt;</div>
-                      <Link href={`/channel-types/${item.id}`}>View</Link>
+                      <div class="cui-text-lg cui-border-2 cui-rounded-full cui-border-gray-200 cui-border-solid cui-px-2 cui-mx-2" onClick={(e) => emitEvent(e.currentTarget, item.name)}>&gt;</div>
+                      {/* <Link href={`/channel-types/${item.id}`}>View</Link> */}
 										</div> 
 									)}
                 </LoadMoreList>
 
-                <Outlet />                
+                {/* <Outlet />                 */}
               </div>
             </div>
           </div>
@@ -60,4 +75,4 @@ const Resource: Component = () => {
   );
 };
 
-export default Resource
+export default ChannelTypeList
